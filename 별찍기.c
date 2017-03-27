@@ -2,13 +2,15 @@
 
 int main(void)
 {
-	int i, j, star;
-	for (i = 0; i < 5; i++)
+	int i, j, num, star;
+	printf("num : ");
+	scanf("%d", &num);
+	for (i = 0; i < num; i++)
 	{
-		for (j = 5; j > i; j--)
+		for (j = num; j > i; j--)
 			printf(" ");
 		for (star = 0; star<=i; star++)
-			printf("¡Ú");
+			printf("* ");
 		printf("\n");
 	}	
 	return 0;

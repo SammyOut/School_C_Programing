@@ -2,16 +2,16 @@
 
 int main(void)
 {
-	int a, b, i, tmp;
+	int num1, num2, i, tmp;
 	printf("Input two numbers : ");
-	scanf("%d %d", &a, &b);
-	if (b<a)
+	scanf("%d %d", &num1, &num2);
+	if (num2<num1)
 	{
-		tmp = a;
-		a = b;
-		b = tmp;
+		tmp = num1;
+		num1 = num2;
+		num2 = tmp;
 	 } 
-	 for (i = a; i<=b; i++)
+	 for (i = num1; i<=num2; i++)
 	 	printf("%d ",i);
 	 return 0;
 }

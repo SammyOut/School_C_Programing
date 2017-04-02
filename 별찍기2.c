@@ -1,23 +1,23 @@
-#include <stdio.h>
+#include<stdio.h>
 
 int main(void)
 {
-	int num, i, j;
-	printf("num : ");
-	scanf("%d", &num);
-	
-	for (i = 0; i < num; i++)
+	int a = 0, i;
+	int string[8];
+	for (i = 0; i < 8; i++)
+		scanf("%d", &string[i]);
+	for (i = 0; i < 7; i++)
 	{
-		for(j = 0; j<i; j++)
-			printf("* ");
-		printf("\n");
+		if (string[i + 1] - string[i] == 1)
+			a++;
+		else if (string[i] - string[i + 1] == -1)
+			a--;
 	}
-	
-	for (i = num; i > 0; i--)
-	{
-		for (j = 0; j < i; j++)
-			printf("* ");
-		printf("\n");
-	}
+	if (a == 7)
+		printf("ascending");
+	else if (a == -7)
+		printf("descending");
+	else
+		printf("mixed");
 	return 0;
 }

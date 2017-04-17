@@ -3,8 +3,8 @@
 
 int main(void)
 {
-	int sp = -1, stack[10001], count, num, i, result[10001];
-	char commend[10];
+	int sp = -1, stack[10001], count, num, i, j, result[10001];
+	char commend[6];
 	scanf("%d", &count);
 	for (i = 0; i < count; i++)
 	{
@@ -19,21 +19,24 @@ int main(void)
 		{
 			if(sp < 0)
 			{
-				printf("%d\n", -1);
+				result[j++] = -1;
 				continue;
 			}
-			printf("%d", stack[sp]);
+			result[j++] = stack[sp];
 			stack[sp] = 0;
 			sp--;
 		}
 		else if (!strcmp(commend, "size"))
-			printf("%d", sp+1);
+			result[j++] = sp+1;
 		else if (!strcmp(commend, "empty"))
-			printf("%d",sp==-1? 1 : 0);
+			result [j++] = sp == -1? 1 : 0;
 	 	else if (!strcmp(commend, "top"))
-			printf("%d",sp==-1? -1 : stack[sp]);
-		if (i != commend-1 && strcmp(commend, "push"))
-			printf("\n");
+			result [j++] = sp == -1? -1 : stack[sp];
 	}
+	for (i = 0; i < j+1; i++)
+		if (i < j)
+			printf("%d\n", result[i]);
+		else
+			printf("%d", result[i]);
 	return 0;
 }

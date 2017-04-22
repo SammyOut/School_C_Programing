@@ -1,22 +1,15 @@
 #include<stdio.h>
 
-int factorial(int num)
+int fac(int n)
 {
-	static int result = 1;
-	if (num == 0 )
-		return result;
-	result *= num;
-	num--;
-	factorial (num);
-		
+	if (n = 1) return 1;
+	return n*fac(n-1);
 }
 
 int main(void)
 {
-	int num, result;
-	printf("n : ");
-	scanf("%d", &num);
-	result = factorial(num);
-	printf("%d", result);
+	int i, n;
+	scanf("%d", &n);
+	printf("%d ", fac(n));
 	return 0;
 }
